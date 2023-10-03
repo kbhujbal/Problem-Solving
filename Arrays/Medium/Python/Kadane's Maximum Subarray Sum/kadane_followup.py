@@ -22,8 +22,5 @@ def maximum_subarray(nums):
     return max_so_far, nums[best_start : best_end + 1]
 
 
-    return max_so_far
-
-
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 print(maximum_subarray(nums))
