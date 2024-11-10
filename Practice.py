@@ -1,8 +1,4 @@
-def practice(arr, k):
-    n = len(arr)
+import math
 
-
-
-
-arr = [2, 3, 4, 7, 11]
-k = 5
+def practice(weights, days):
+    
