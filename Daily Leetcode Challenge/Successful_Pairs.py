@@ -1,3 +1,5 @@
+# Leetcode 2300
+
 import bisect
 
 def successfulPairs(spells, potions, success):
