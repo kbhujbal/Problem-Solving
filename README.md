@@ -29,7 +29,7 @@ This repository serves as a personal log of my progress in solving coding proble
 ## 🛠️ Tools & Technologies
 
 - **Language**: Java
-- **Tools**: IntelliJ IDEA, VS Code
+- **Tools**: VS Code
 - **Version Control**: Git & GitHub
 
 ## 🤝 Contributing
