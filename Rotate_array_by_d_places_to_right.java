@@ -1,17 +1,28 @@
 public class Rotate_array_by_d_places_to_right {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-        int n = arr.length;
+        int [] nums = {1, 2, 3, 4, 5, 6, 7};
         int d = 3;
-        for (int i = 0; i < d; i++) {
-            int temp = arr[0];
-            for (int j = 0; j < n - 1; j++) {
-                arr[j] = arr[j + 1];
-            }
-            arr[n - 1] = temp;
+
+        int n = nums.length;
+        d = d % n;
+
+        reverse(nums, 0, n - 1);
+        reverse(nums, 0, d - 1);
+        reverse(nums, d, n - 1);
+
+        System.out.println("Rotated array by d places to right: ");
+        for(int i = 0; i < n; i++) {
+            System.out.print(nums[i] + " ");
         }
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+    }
+
+    public static void reverse(int[] nums, int start, int end) {
+        while(start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 }
