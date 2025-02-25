@@ -26,3 +26,32 @@ public class Rotate_array_by_d_places_to_right {
         }
     }
 }
+
+
+// Approach using extra space
+// Time Complexity: O(n)    Space Complexity: O(d)  where n is the number of elements in the array  
+// This approach first stores the last k elements in a temporary array. Then, it shifts the remaining elements to the right and finally places the stored elements at the beginning.
+
+
+// class Solution {
+//     public void rotate(int[] nums, int k) {
+//         int n = nums.length;
+//         k = k % n; // Handle cases where k > n
+        
+//         // Step 1: Store the last k elements in a temporary array
+//         int[] temp = new int[k];
+//         for (int i = 0; i < k; i++) {
+//             temp[i] = nums[n - k + i];
+//         }
+
+//         // Step 2: Shift the remaining elements to the right
+//         for (int i = n - 1; i >= k; i--) {
+//             nums[i] = nums[i - k];
+//         }
+
+//         // Step 3: Place stored k elements at the beginning
+//         for (int i = 0; i < k; i++) {
+//             nums[i] = temp[i];
+//         }
+//     }
+// }
