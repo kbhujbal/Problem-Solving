@@ -1,23 +1,20 @@
 import java.util.Arrays;
 
-public class Partition_array_according_to_given_pilot {
+public class Partition_array_according_to_given_pivot {
 
     public static int[] pivotArray(int[] nums, int pivot) {
         int n = nums.length;
         int[] result = new int[n];
-        int left = 0; // Pointer for elements less than pivot
-        int right = n - 1; // Pointer for elements greater than pivot
-        int equalCount = 0; // Count of elements equal to pivot
+        int left = 0; 
+        int right = n - 1; 
+        int equalCount = 0; 
 
-        // First pass: Count elements equal to pivot
         for (int num : nums) {
             if (num == pivot) {
                 equalCount++;
             }
         }
 
-        // Second pass: Place elements less than pivot at the beginning
-        // and elements greater than pivot at the end
         for (int num : nums) {
             if (num < pivot) {
                 result[left++] = num;
@@ -26,15 +23,12 @@ public class Partition_array_according_to_given_pilot {
             }
         }
 
-        // Fill the middle with elements equal to pivot
         while (equalCount > 0) {
             result[left++] = pivot;
             equalCount--;
         }
 
-        // Reverse the elements greater than pivot to maintain their relative order
         reverse(result, left, n - 1);
-
         return result;
     }
 
@@ -49,7 +43,6 @@ public class Partition_array_according_to_given_pilot {
     }
 
     public static void main(String[] args) {
-        // Example input
         int[] nums = {9, 12, 5, 10, 14, 3, 10};
         int pivot = 10;
 
