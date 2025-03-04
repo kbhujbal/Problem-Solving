@@ -3,7 +3,7 @@ public class Maximum_subarray_followup{
         int [] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
 
         int sum = 0;
-        long maxi = Long.MIN_VALUE;
+        int maxi = Integer.MIN_VALUE;
         int start = -1;
         int ansStart = -1;
         int ansEnd = -1;
