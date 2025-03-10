@@ -66,5 +66,3 @@ public class Count_of_substrings_containing_K_vowels {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 }
-
-// Count_of_substrings_containing_K_vowels
