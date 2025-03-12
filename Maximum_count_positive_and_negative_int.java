@@ -29,7 +29,6 @@ class Maximum_count_positive_and_negative_int {
     public static void main(String[] args) {
         Maximum_count_positive_and_negative_int solution = new Maximum_count_positive_and_negative_int();
         
-        // Example test case
         int[] nums = {-4, -3, -2, -1, 0, 1, 2, 3, 4};
         int result = solution.maximumCount(nums);
         
