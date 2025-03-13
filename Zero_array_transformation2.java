@@ -14,7 +14,7 @@ public class Zero_array_transformation2 {
                 left = mid + 1;
             }
         }
-// comment
+
         return left > m ? -1 : left;
     }
 
