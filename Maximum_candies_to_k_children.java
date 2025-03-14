@@ -26,9 +26,9 @@ public class Maximum_candies_to_k_children{
     }
 
     public static void main(String[] args) {
-        // Example Test Case
-        int[] candies = {5, 8, 6}; // Given candy piles
-        long k = 3; // Number of children
+        
+        int[] candies = {5, 8, 6}; 
+        long k = 3; 
 
         int result = maximumCandies(candies, k);
         System.out.println("Maximum candies per child: " + result);
