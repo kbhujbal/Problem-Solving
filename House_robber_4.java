@@ -10,9 +10,9 @@ public class House_robber_4 {
         while (left < right) {
             int mid = left + (right - left) / 2;
             if (canRobK(nums, k, mid)) {
-                right = mid; // Try for a smaller max value
+                right = mid; 
             } else {
-                left = mid + 1; // Increase the limit
+                left = mid + 1; 
             }
         }
         return left;
@@ -23,24 +23,21 @@ public class House_robber_4 {
         while (i < nums.length) {
             if (nums[i] <= maxValue) {
                 count++;
-                i++; // Skip the next house (adjacency condition)
+                i++;
             }
-            i++; // Move to the next house
+            i++; 
         }
         return count >= k;
     }
 
-    // Main method to test the function
     public static void main(String[] args) {
         House_robber_4 robber = new House_robber_4();
         
-        // Example test case
         int[] nums = {2, 3, 5, 9}; 
         int k = 2;
         
         int result = robber.minCapability(nums, k);
         
         System.out.println("Minimum Maximum Capability: " + result); 
-        // Expected Output: 3
     }
 }
