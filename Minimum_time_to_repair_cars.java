@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Minimum_time_to_repair_cars {
     public long repairCars(int[] ranks, int cars) {
-        Arrays.sort(ranks); // Sort mechanics by efficiency
+        Arrays.sort(ranks); 
         
-        long left = 1, right = (long) ranks[0] * (long) cars * (long) cars; // Upper bound for time
+        long left = 1, right = (long) ranks[0] * (long) cars * (long) cars; 
 
         while (left < right) {
             long mid = left + (right - left) / 2;
@@ -16,14 +16,14 @@ public class Minimum_time_to_repair_cars {
             }
         }
         
-        return left; // Minimum time to repair all cars
+        return left; 
     }
 
     private boolean canRepairAllCars(int[] ranks, int cars, long time) {
         long carsRepaired = 0;
         for (int rank : ranks) {
-            carsRepaired += (long) Math.sqrt(time / rank); // Max cars mechanic can repair in `time`
-            if (carsRepaired >= cars) return true; // Stop early if we can repair all cars
+            carsRepaired += (long) Math.sqrt(time / rank); 
+            if (carsRepaired >= cars) return true; 
         }
         return false;
     }
