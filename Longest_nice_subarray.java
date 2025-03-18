@@ -6,10 +6,10 @@ public class Longest_nice_subarray {
 
         for (int right = 0; right < nums.length; right++) {
             while ((bitMask & nums[right]) != 0) {
-                bitMask ^= nums[left]; // Remove nums[left] from bitMask
-                left++; // Move left pointer to shrink the window
+                bitMask ^= nums[left]; 
+                left++; 
             }
-            bitMask |= nums[right]; // Add nums[right] to bitMask
+            bitMask |= nums[right]; 
             maxLen = Math.max(maxLen, right - left + 1);
         }
 
@@ -19,7 +19,6 @@ public class Longest_nice_subarray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Read input array size
         System.out.print("Enter the number of elements: ");
         int n = scanner.nextInt();
 
@@ -29,14 +28,11 @@ public class Longest_nice_subarray {
             nums[i] = scanner.nextInt();
         }
 
-        // Create an instance and compute the result
         Longest_nice_subarray solution = new Longest_nice_subarray();
         int result = solution.longestNiceSubarray(nums);
 
-        // Print the output
         System.out.println("Longest Nice Subarray Length: " + result);
 
-        // Close scanner
         scanner.close();
     }
 }
