@@ -23,11 +23,11 @@ public class MinOperationsBinaryArray {
     public static void main(String[] args) {
         // Example test cases
         int[][] testCases = {
-            {0, 1, 0, 1, 0},        // Expected output: 2
-            {1, 1, 0, 0, 1},        // Expected output: -1 (not possible)
-            {0, 0, 0, 0, 1},        // Expected output: 2
-            {0, 1, 1, 1, 0, 0},     // Expected output: -1 (not possible)
-            {0, 1, 1, 1}            // Expected output: 1
+            {0, 1, 0, 1, 0},       
+            {1, 1, 0, 0, 1},       
+            {0, 0, 0, 0, 1},       
+            {0, 1, 1, 1, 0, 0},     
+            {0, 1, 1, 1}           
         };
 
         System.out.println("Running test cases...\n");
