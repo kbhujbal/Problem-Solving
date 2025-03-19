@@ -22,12 +22,19 @@ public class MinOperationsBinaryArray {
 
     public static void main(String[] args) {
         // Example test cases
-        int[] nums1 = {0, 1, 0, 1, 0}; // Expected output: 2
-        int[] nums2 = {1, 1, 0, 0, 1}; // Expected output: -1 (not possible)
-        int[] nums3 = {0, 0, 0, 0, 1}; // Expected output: 2
+        int[][] testCases = {
+            {0, 1, 0, 1, 0},        // Expected output: 2
+            {1, 1, 0, 0, 1},        // Expected output: -1 (not possible)
+            {0, 0, 0, 0, 1},        // Expected output: 2
+            {0, 1, 1, 1, 0, 0},     // Expected output: -1 (not possible)
+            {0, 1, 1, 1}            // Expected output: 1
+        };
 
-        System.out.println("Test Case 1: " + Arrays.toString(nums1) + " -> " + minOperations(nums1));
-        System.out.println("Test Case 2: " + Arrays.toString(nums2) + " -> " + minOperations(nums2));
-        System.out.println("Test Case 3: " + Arrays.toString(nums3) + " -> " + minOperations(nums3));
+        System.out.println("Running test cases...\n");
+        for (int i = 0; i < testCases.length; i++) {
+            int[] testCase = Arrays.copyOf(testCases[i], testCases[i].length);
+            int result = minOperations(testCase);
+            System.out.println("Test Case " + (i + 1) + ": " + Arrays.toString(testCases[i]) + " -> " + result);
+        }
     }
 }
