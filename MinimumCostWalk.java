@@ -69,8 +69,8 @@ public class MinimumCostWalk {
         MinimumCostWalk solution = new MinimumCostWalk();
         
         int n = 4;
-        int[][] edges = {{0, 1, 7}, {1, 2, 3}, {2, 3, 5}, {0, 3, 10}};
-        int[][] queries = {{0, 2}, {1, 3}, {0, 3}};
+        int[][] edges = {{0, 1, 7}, {1, 3, 7}, {1, 2, 1}};
+        int[][] queries = {{0, 3}, {3, 4}};
         
         System.out.println(Arrays.toString(solution.minimumCostWalk(n, edges, queries)));
         // Expected Output: [3, 3, 10]
