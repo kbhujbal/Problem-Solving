@@ -1,78 +1,70 @@
 import java.util.*;
 
 public class MinimumCostWalk {
-    
-    static class Node {
-        int vertex;
-        int andValue;
 
-        Node(int vertex, int andValue) {
-            this.vertex = vertex;
-            this.andValue = andValue;
-        }
-    }
-
-    public int[] minimumCostWalk(int n, int[][] edges, int[][] queries) {
+    public int[] minimumCost(int n, int[][] edges, int[][] queries) {
+        // Build graph
         Map<Integer, List<int[]>> graph = new HashMap<>();
-
-        // Build the adjacency list representation of the graph
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
             graph.computeIfAbsent(u, k -> new ArrayList<>()).add(new int[]{v, w});
             graph.computeIfAbsent(v, k -> new ArrayList<>()).add(new int[]{u, w});
         }
 
-        int[] results = new int[queries.length];
-
+        int[] res = new int[queries.length];
         for (int i = 0; i < queries.length; i++) {
-            int start = queries[i][0];
-            int end = queries[i][1];
-            results[i] = bfsMinAndCost(graph, start, end, n);
+            int u = queries[i][0], v = queries[i][1];
+            if (u == v) {
+                res[i] = 0;
+            } else {
+                res[i] = bfs(u, v, graph, n);
+            }
         }
-
-        return results;
+        return res;
     }
 
-    private int bfsMinAndCost(Map<Integer, List<int[]>> graph, int start, int end, int n) {
-        if (!graph.containsKey(start) || !graph.containsKey(end)) return -1;
+    private int bfs(int start, int target, Map<Integer, List<int[]>> graph, int n) {
+        Queue<int[]> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>();
+        int minCost = Integer.MAX_VALUE;
 
-        Queue<Node> queue = new LinkedList<>();
-        Map<Integer, Integer> visited = new HashMap<>();
-
-        queue.offer(new Node(start, Integer.MAX_VALUE));
-        visited.put(start, Integer.MAX_VALUE);
+        queue.offer(new int[]{start, -1}); // -1 means all bits set
 
         while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            int currVertex = node.vertex;
-            int currAnd = node.andValue;
+            int[] curr = queue.poll();
+            int node = curr[0];
+            int cost = curr[1];
 
-            if (currVertex == end) return currAnd;
+            if (node == target) {
+                minCost = Math.min(minCost, cost);
+            }
 
-            for (int[] neighbor : graph.getOrDefault(currVertex, new ArrayList<>())) {
-                int nextVertex = neighbor[0];
-                int edgeWeight = neighbor[1];
+            for (int[] nei : graph.getOrDefault(node, new ArrayList<>())) {
+                int next = nei[0];
+                int weight = nei[1];
+                int newCost = (cost == -1) ? weight : (cost & weight);
+                String state = next + ":" + newCost;
 
-                int newAnd = currAnd & edgeWeight;
-
-                if (!visited.containsKey(nextVertex) || newAnd > visited.get(nextVertex)) {
-                    visited.put(nextVertex, newAnd);
-                    queue.offer(new Node(nextVertex, newAnd));
+                if (!visited.contains(state)) {
+                    visited.add(state);
+                    queue.offer(new int[]{next, newCost});
                 }
             }
         }
 
-        return -1;
+        return minCost == Integer.MAX_VALUE ? -1 : minCost;
     }
 
+    // ✅ MAIN METHOD for local testing
     public static void main(String[] args) {
-        MinimumCostWalk solution = new MinimumCostWalk();
-        
-        int n = 4;
+        MinimumCostWalk solver = new MinimumCostWalk();
+
+        int n = 5;
         int[][] edges = {{0, 1, 7}, {1, 3, 7}, {1, 2, 1}};
         int[][] queries = {{0, 3}, {3, 4}};
-        
-        System.out.println(Arrays.toString(solution.minimumCostWalk(n, edges, queries)));
-        // Expected Output: [3, 3, 10]
+
+        int[] result = solver.minimumCost(n, edges, queries);
+
+        System.out.println("Output: " + Arrays.toString(result)); // Expected: [1, -1]
     }
 }
