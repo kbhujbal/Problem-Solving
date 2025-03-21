@@ -7,7 +7,6 @@ public class Possible_recipes_from_supplies {
         Map<String, Integer> indegree = new HashMap<>();
         Set<String> supplySet = new HashSet<>(Arrays.asList(supplies));
 
-        // Build graph and indegree map
         for (int i = 0; i < recipes.length; i++) {
             String recipe = recipes[i];
             List<String> ingList = ingredients.get(i);
@@ -40,12 +39,11 @@ public class Possible_recipes_from_supplies {
     public static void main(String[] args) {
         Possible_recipes_from_supplies solver = new Possible_recipes_from_supplies();
 
-        // Sample test case
         String[] recipes = {"bread", "sandwich", "burger"};
         List<List<String>> ingredients = new ArrayList<>();
-        ingredients.add(Arrays.asList("yeast", "flour"));         // for bread
-        ingredients.add(Arrays.asList("bread", "meat"));          // for sandwich
-        ingredients.add(Arrays.asList("sandwich", "lettuce"));    // for burger
+        ingredients.add(Arrays.asList("yeast", "flour"));         
+        ingredients.add(Arrays.asList("bread", "meat"));          
+        ingredients.add(Arrays.asList("sandwich", "lettuce"));    
         String[] supplies = {"yeast", "flour", "meat", "lettuce"};
 
         List<String> possibleRecipes = solver.findAllRecipes(recipes, ingredients, supplies);
