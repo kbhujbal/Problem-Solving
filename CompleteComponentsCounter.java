@@ -3,7 +3,7 @@ import java.util.*;
 public class CompleteComponentsCounter {
 
     public int countCompleteComponents(int n, int[][] edges) {
-        // Build the adjacency list
+        
         List<List<Integer>> graph = new ArrayList<>();
         for (int i = 0; i < n; i++) graph.add(new ArrayList<>());
         for (int[] edge : edges) {
@@ -19,12 +19,12 @@ public class CompleteComponentsCounter {
                 List<Integer> nodes = new ArrayList<>();
                 dfs(i, graph, visited, nodes);
 
-                // Count edges in this component
+                
                 int edgeCount = 0;
                 for (int node : nodes) {
                     edgeCount += graph.get(node).size();
                 }
-                edgeCount /= 2; // Each edge counted twice
+                edgeCount /= 2; 
 
                 int numNodes = nodes.size();
                 int expectedEdges = numNodes * (numNodes - 1) / 2;
@@ -60,6 +60,6 @@ public class CompleteComponentsCounter {
         };
 
         int result = counter.countCompleteComponents(n, edges);
-        System.out.println("Output: " + result);  // Expected Output: 3
+        System.out.println("Output: " + result);  
     }
 }
