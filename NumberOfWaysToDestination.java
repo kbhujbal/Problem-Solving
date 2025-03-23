@@ -12,7 +12,7 @@ public class NumberOfWaysToDestination {
     public static int countPaths(int n, int[][] roads) {
         final int MOD = 1_000_000_007;
 
-        // Step 1: Build the graph
+    
         List<List<Pair>> graph = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             graph.add(new ArrayList<>());
@@ -24,7 +24,6 @@ public class NumberOfWaysToDestination {
             graph.get(v).add(new Pair(u, t));
         }
 
-        // Step 2: Initialize distance and ways arrays
         long[] dist = new long[n];
         Arrays.fill(dist, Long.MAX_VALUE);
         dist[0] = 0;
@@ -32,7 +31,6 @@ public class NumberOfWaysToDestination {
         int[] ways = new int[n];
         ways[0] = 1;
 
-        // Step 3: Min-heap for Dijkstra
         PriorityQueue<Pair> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a.time));
         pq.offer(new Pair(0, 0));
 
@@ -61,7 +59,6 @@ public class NumberOfWaysToDestination {
         return ways[n - 1];
     }
 
-    // Main method to run the example test case
     public static void main(String[] args) {
         int n = 7;
         int[][] roads = {
