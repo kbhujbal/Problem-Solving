@@ -10,7 +10,6 @@ public class GasStation {
             totalTank += gain;
             currTank += gain;
 
-            // If tank goes negative, reset starting point
             if (currTank < 0) {
                 startIndex = i + 1;
                 currTank = 0;
@@ -26,6 +25,6 @@ public class GasStation {
         int[] cost = {3, 4, 5, 1, 2};
 
         int result = canCompleteCircuit(gas, cost);
-        System.out.println("Output: " + result); // Expected: 3
+        System.out.println("Output: " + result); 
     }
 }
