@@ -67,6 +67,6 @@ public class NumberOfWaysToDestination {
             {0, 4, 5}, {4, 6, 2}
         };
         int result = countPaths(n, roads);
-        System.out.println("Output: " + result); // Expected: 4
+        System.out.println("Output: " + result);
     }
 }
