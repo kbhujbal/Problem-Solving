@@ -7,7 +7,7 @@ public class minOperations_for_uni_grid {
             {6, 8}
         };
         int x = 2;
-
+        // Output: 4
         minOperations_for_uni_grid solver = new minOperations_for_uni_grid();
         int result = solver.minOperations(grid, x);
         System.out.println("Minimum operations: " + result);
