@@ -2,7 +2,6 @@ import java.util.Arrays;
 
 public class minOperations_for_uni_grid {
     public static void main(String[] args) {
-        // Sample input
         int[][] grid = {
             {2, 4},
             {6, 8}
@@ -20,7 +19,6 @@ public class minOperations_for_uni_grid {
         int size = m * n;
         int[] flat = new int[size];
 
-        // Flatten the grid
         int index = 0;
         for (int[] row : grid) {
             for (int val : row) {
@@ -28,7 +26,6 @@ public class minOperations_for_uni_grid {
             }
         }
 
-        // Check feasibility
         int remainder = flat[0] % x;
         for (int num : flat) {
             if (num % x != remainder) {
@@ -36,11 +33,9 @@ public class minOperations_for_uni_grid {
             }
         }
 
-        // Sort to find the median
         Arrays.sort(flat);
         int median = flat[size / 2];
 
-        // Calculate total operations
         int operations = 0;
         for (int num : flat) {
             operations += Math.abs(num - median) / x;
