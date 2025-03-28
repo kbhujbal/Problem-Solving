@@ -91,7 +91,6 @@ public class MaxPointsFromGridQueries {
         return result;
     }
 
-    // Sample main method for local testing
     public static void main(String[] args) {
         MaxPointsFromGridQueries solver = new MaxPointsFromGridQueries();
 
