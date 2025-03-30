@@ -16,7 +16,6 @@ public class LongestPalindromeAfterConcat {
             for (int j = i; j <= s.length(); j++) {
                 String subS = s.substring(i, j);
 
-                // Try all possible substrings from t
                 for (int k = 0; k <= t.length(); k++) {
                     for (int l = k; l <= t.length(); l++) {
                         String subT = t.substring(k, l);
@@ -34,7 +33,6 @@ public class LongestPalindromeAfterConcat {
     }
 
     public static void main(String[] args) {
-        // Example 1
         String s = "a";
         String t = "a";
         int result = longestPalindrome(s, t);
