@@ -1,6 +1,4 @@
 public class LongestPalindromeAfterConcat {
-
-    // Check if a string is palindrome
     private static boolean isPalindrome(String str) {
         int left = 0, right = str.length() - 1;
         while (left < right) {
@@ -11,11 +9,9 @@ public class LongestPalindromeAfterConcat {
         return true;
     }
 
-    // Main logic to find the longest palindrome after concatenating substrings
     public static int longestPalindrome(String s, String t) {
         int maxLen = 0;
 
-        // Try all possible substrings from s
         for (int i = 0; i <= s.length(); i++) {
             for (int j = i; j <= s.length(); j++) {
                 String subS = s.substring(i, j);
@@ -44,6 +40,6 @@ public class LongestPalindromeAfterConcat {
         int result = longestPalindrome(s, t);
         System.out.println("Example 1:");
         System.out.println("Input: s = \"" + s + "\", t = \"" + t + "\"");
-        System.out.println("Output: " + result); // Expected: 2
+        System.out.println("Output: " + result); 
     }
 }
