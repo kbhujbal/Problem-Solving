@@ -2,7 +2,7 @@ public class MaximumTripletValue1 {
     public static void main(String[] args) {
         int[] nums = {12, 6, 1, 2, 7};
         long result = maximumTripletValue(nums);
-        System.out.println("Output: " + result); // Expected output: 77
+        System.out.println("Output: " + result); 
     }
 
     public static long maximumTripletValue(int[] nums) {
