@@ -1,4 +1,4 @@
-public class MaximumTripletValue {
+public class MaximumTripletValue2 {
     public static void main(String[] args) {
         int[] nums = {12, 6, 1, 2, 7};
         long result = maximumTripletValue(nums);
