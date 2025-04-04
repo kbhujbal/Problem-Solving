@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class LcaDeepestLeaves {
-
-    // Definition for a binary tree node.
     static class TreeNode {
         int val;
         TreeNode left, right;
@@ -11,7 +9,6 @@ public class LcaDeepestLeaves {
         }
     }
 
-    // Pair class for returning both depth and node
     static class Pair {
         int depth;
         TreeNode node;
@@ -21,7 +18,6 @@ public class LcaDeepestLeaves {
         }
     }
 
-    // Main solution method
     public TreeNode lcaDeepestLeaves(TreeNode root) {
         return dfs(root).node;
     }
@@ -39,7 +35,6 @@ public class LcaDeepestLeaves {
         }
     }
 
-    // Helper method to build tree from level-order array
     public static TreeNode buildTree(Integer[] arr) {
         if (arr == null || arr.length == 0) return null;
         TreeNode root = new TreeNode(arr[0]);
@@ -62,7 +57,6 @@ public class LcaDeepestLeaves {
         return root;
     }
 
-    // Helper method to print tree in-order (for checking output subtree)
     public static void printTree(TreeNode root) {
         if (root == null) return;
         printTree(root.left);
@@ -71,7 +65,6 @@ public class LcaDeepestLeaves {
     }
 
     public static void main(String[] args) {
-        // Example Input: root = [3,5,1,6,2,0,8,null,null,7,4]
         Integer[] input = {3,5,1,6,2,0,8,null,null,7,4};
         TreeNode root = buildTree(input);
 
@@ -80,6 +73,6 @@ public class LcaDeepestLeaves {
 
         System.out.println("Output subtree rooted at: " + lca.val);
         System.out.print("Inorder traversal of output subtree: ");
-        printTree(lca); // Expected subtree: [2,7,4] — root 2 with children 7 and 4
+        printTree(lca);
     }
 }
