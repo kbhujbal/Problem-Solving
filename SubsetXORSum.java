@@ -23,7 +23,6 @@ public class SubsetXORSum {
         int[] nums = {5, 1, 6};
         int result = solution.subsetXORSum(nums);
 
-        System.out.println("Input: nums = [5, 1, 6]");
         System.out.println("Output: " + result); // Expected output: 28
     }
 }
