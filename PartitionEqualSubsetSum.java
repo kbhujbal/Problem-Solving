@@ -5,12 +5,11 @@ public class PartitionEqualSubsetSum {
         for (int num : nums)
             sum += num;
 
-        // If the total sum is odd, we can't partition it into equal subsets
         if (sum % 2 != 0) return false;
 
         int target = sum / 2;
         boolean[] dp = new boolean[target + 1];
-        dp[0] = true; // We can always make 0 sum with empty subset
+        dp[0] = true; 
 
         for (int num : nums) {
             for (int j = target; j >= num; j--) {
@@ -23,8 +22,8 @@ public class PartitionEqualSubsetSum {
 
     public static void main(String[] args) {
         // Sample test case
-        int[] nums1 = {1, 5, 11, 5};  // Expected: true
-        int[] nums2 = {1, 2, 3, 5};   // Expected: false
+        int[] nums1 = {1, 5, 11, 5}; 
+        int[] nums2 = {1, 2, 3, 5};   
 
         System.out.println("Can partition [1, 5, 11, 5]? " + canPartition(nums1));
         System.out.println("Can partition [1, 2, 3, 5]? " + canPartition(nums2));
