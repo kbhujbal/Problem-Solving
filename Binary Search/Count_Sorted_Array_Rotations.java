@@ -4,44 +4,40 @@
 // Index of the minimum element is the number of rotations.
 
 public class Count_Sorted_Array_Rotations {
-    public static int findKRotation(int[] arr) {
+    public static void main(String[] args) {
+        int[] arr = {3, 4, 5, 1, 2};
+        
         int low = 0, high = arr.length - 1;
-        int ans = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         int index = -1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            //search space is already sorted
-            //then arr[low] will always be
-            //the minimum in that search space:
+
+        while(low <= high){
+            int mid = (low + high)/2;
+
             if (arr[low] <= arr[high]) {
-                if (arr[low] < ans) {
+                if (arr[low] < min) {
+                    min = arr[low];
                     index = low;
-                    ans = arr[low];
                 }
                 break;
             }
 
             if (arr[low] <= arr[mid]) {
-                if (arr[low] < ans) {
+                if (arr[low] < min) {
+                    min = arr[low];
                     index = low;
-                    ans = arr[low];
                 }
                 low = mid + 1;
-            } else { 
-                if (arr[mid] < ans) {
+            }
+            else{
+                if (arr[mid] < min) {
+                    min = arr[mid];
                     index = mid;
-                    ans = arr[mid];
                 }
                 high = mid - 1;
             }
         }
-        return index;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {4, 5, 6, 7, 0, 1, 2, 3};
-        int ans = findKRotation(arr);
-        System.out.println("The array is rotated " + ans + " times.");
+        System.out.println("Array is rotated " + index + " times");
     }
 }
 
