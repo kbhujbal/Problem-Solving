@@ -8,6 +8,12 @@ public class Minimum_in_Rotated_Sorted_Array{
         while (low <= high) { 
             int mid = (low + high)/2;
 
+            // search space is already sorted
+            if (arr[low] <= arr[high]) {
+                min = Math.min(min, arr[low]);
+                break;
+            }
+
             if (arr[low] <= arr[mid]) {
                 min = Math.min(min, arr[low]);
                 low = mid + 1;
