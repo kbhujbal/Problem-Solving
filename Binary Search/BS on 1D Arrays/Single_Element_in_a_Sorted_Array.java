@@ -14,9 +14,22 @@ public class Single_Element_in_a_Sorted_Array{
         boolean found = false;
         int low = 1, high = arr.length - 2;
 
+        if (arr.length == 1) {
+            System.out.println("Single element is : " + arr[0]);
+            return;
+        }
+        if (arr[0] != arr[1]) {
+            System.out.println("Single element is : " + arr[0]);
+            return;
+        }
+        if (arr[arr.length - 1] != arr[arr.length - 2]) {
+            System.out.println("Single element is : " + arr[arr.length - 1]);
+            return;
+        }
+
         while (low <= high) { 
             int mid = (low + high)/2;
-
+            
             if (arr[mid] != arr[mid - 1] && arr[mid] != arr[mid  + 1]) {
                 System.out.println("Single element is : " + arr[mid]);
                 found = true;
