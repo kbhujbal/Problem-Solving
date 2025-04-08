@@ -24,6 +24,8 @@ public class Finding_int_squareroot{
                 high = mid - 1;
             }
         }
-        System.out.println("Square root is : " + high);        
+        if (!found) {
+            System.out.println("Square root is : " + (high));
+        }        
     }
 }
