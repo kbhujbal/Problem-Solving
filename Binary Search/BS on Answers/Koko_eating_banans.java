@@ -1,6 +1,6 @@
 public class Koko_eating_banans {
     public static int findMax(int[] v) {
-        int maxi = Integer.MIN_VALUE;;
+        int maxi = Integer.MIN_VALUE;
         int n = v.length;
         
         for (int i = 0; i < n; i++) {
