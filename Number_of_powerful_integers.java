@@ -8,7 +8,7 @@ public class Number_of_powerful_integers {
 
         Solution sol = new Solution();
         long result = sol.numberOfPowerfulInt(start, finish, limit, s);
-        System.out.println("Output: " + result);  // Expected: 5
+        System.out.println("Output: " + result);  
     }
 }
 
@@ -35,8 +35,8 @@ class Solution {
         }
 
         int t = tight ? 1 : 0;
-        if (dp[pos][t] == null) dp[pos][t] = new Long[10000];  // 10^4 digits just to be safe (curr string cache)
-        int currHash = curr.hashCode() & 0x7FFFFFFF; // positive hash as index
+        if (dp[pos][t] == null) dp[pos][t] = new Long[10000];  
+        int currHash = curr.hashCode() & 0x7FFFFFFF; 
         currHash %= 10000;
 
         if (dp[pos][t][currHash] != null) return dp[pos][t][currHash];
