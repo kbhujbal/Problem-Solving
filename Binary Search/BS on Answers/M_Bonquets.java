@@ -61,11 +61,6 @@ public class M_Bonquets{
             }
         }
         bonqs += (cnt/k);
-        if (bonqs >= m) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return bonqs >= m;
     }
 }
