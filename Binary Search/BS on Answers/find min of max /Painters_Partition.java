@@ -19,7 +19,7 @@ public class Painters_Partition{
                 high = mid - 1;
             }
         }
-        System.out.println("Minmum NUmber : " + low);
+        System.out.println("Minmum Number : " + low);
     }
 
     private static int get_max(int[] arr){

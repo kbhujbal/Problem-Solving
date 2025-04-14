@@ -19,7 +19,7 @@ public class Split_array_largest_sum{
                 high = mid - 1;
             }
         }
-        System.out.println("Minmum NUmber : " + low);
+        System.out.println("Minmum Number : " + low);
     }
 
 
