@@ -1,3 +1,6 @@
+// Book Allocation Problem, Painter's Partition Problem, 
+// and Split Array Largest Sum Problem are all variations of the same problem.
+
 public class Book_allocation{
     public static void main(String[] args) {
         int[] arr = {25, 46, 28, 49, 24};
