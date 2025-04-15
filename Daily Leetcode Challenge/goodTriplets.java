@@ -45,7 +45,7 @@ public class goodTriplets {
     }
 
     static class Fenwick {
-        private int[] tree;
+        private final int[] tree;
 
         public Fenwick(int size) {
             tree = new int[size + 1];
