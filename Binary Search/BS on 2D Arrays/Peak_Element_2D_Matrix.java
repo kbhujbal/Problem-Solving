@@ -2,8 +2,9 @@ public class Peak_Element_2D_Matrix{
     public static void main(String[] args) {
         boolean found = false;
         int[][] matrix = {
-            {1, 4},
-            {3, 2}
+            {10, 20, 15},
+            {21, 30, 14},
+            {7, 16, 32}
         };
 
         int n = matrix.length;
