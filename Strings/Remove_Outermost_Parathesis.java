@@ -1,6 +1,6 @@
 public class Remove_Outermost_Parathesis{
     public static void main(String[] args) {
-        String input = "()()";
+        String input = "(()())(())(()(()))";
 
         StringBuilder result = new StringBuilder();
         int depth = 0;
