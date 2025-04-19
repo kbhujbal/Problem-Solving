@@ -10,11 +10,6 @@ public class Check_Rotation_String{
         String doubled = s + s;
         isRotated = doubled.contains(goal);
 
-        if (!isRotated) {
-            System.out.println("False");
-        }
-        else{
-            System.out.println("True");
-        }
+        System.out.println(isRotated);
     }
 }
