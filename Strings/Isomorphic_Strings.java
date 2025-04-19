@@ -7,19 +7,10 @@ public class Isomorphic_Strings{
         String s = "foo";
         String t = "bar";
         
-        boolean isomorphic = check_isomorphic(s, t);
-        if (isomorphic) {
-            System.out.println("Strings are Isomorphic");
-        }
-        else{
-            System.out.println("Strings are not Isomorphic");
-        }
+        boolean isomorphic = true;
 
-    }
-
-    private static boolean check_isomorphic(String s, String t){
-        if(s.length() != t.length()) return false;
-
+        if(s.length() != t.length()) isomorphic = false;
+        
         Map<Character, Character> ST= new HashMap<>();
         Map<Character, Character> TS = new HashMap<>();   
 
@@ -29,17 +20,25 @@ public class Isomorphic_Strings{
 
             if (ST.containsKey(ch1)) {
                 if (ST.get(ch1) != ch2) {
-                    return false;
+                    isomorphic = false;
+                    break;
                 }
             }
             else{
                 if (TS.containsKey(ch2)) {
-                    return false;
+                    isomorphic = false;
+                    break;
                 }
                 ST.put(ch1, ch2);
                 TS.put(ch2, ch1);
             }
         }
-        return true;
+
+        if (isomorphic) {
+            System.out.println("Strings are Isomorphic");
+        }
+        else{
+            System.out.println("Strings are not Isomorphic");
+        }
     }
 }
