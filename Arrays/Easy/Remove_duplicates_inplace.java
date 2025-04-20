@@ -19,7 +19,7 @@ public class Remove_duplicates_inplace {
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-//  Brute Force Approach: Using two pointers
+//  Brute Force Approach: Use a HashSet to store unique elements.
 // 1. Use a HashSet: Iterate through the given array and insert each element into a HashSet. This automatically removes duplicates.
 // 2. Sort and Copy Back: Convert the set back into an array and overwrite nums to ensure in-place modification.
 // 3. Return Unique Count: The size of the HashSet gives the number of unique elements.
