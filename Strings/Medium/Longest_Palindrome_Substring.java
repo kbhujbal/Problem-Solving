@@ -1,6 +1,11 @@
 public class Longest_Palindrome_Substring{
     public static void main(String[] args){
-        String s = "cbbd";
+        String s = "babad";
+
+        if (s == null || s.length() < 1) {
+            System.out.println("No palindromic substring found.");
+            return;
+        }
 
         int start = 0, end = 0;
 
