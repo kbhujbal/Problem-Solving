@@ -1,6 +1,27 @@
 public class Doubly_Linked_List{
     public static void main(String[] args) {
-        
+        DLL dll = new DLL();
+
+        dll.insertAtEnd(10);
+        dll.insertAtEnd(20);
+        dll.insertAtEnd(30);
+        dll.insertAtEnd(40);
+        dll.insertAtEnd(50);
+
+        System.out.println("Doubly Linked List: ");
+        dll.printList();
+
+        System.out.println("After Inserting '0' at the beginning: ");
+        dll.insertAtBeginning(0);
+        dll.printList();
+
+        System.out.println("After Deleting a '30' node: ");
+        dll.deleteNode(30);
+        dll.printList();
+
+        System.out.println("After reversing the list: ");
+        dll.reverse();
+        dll.printList();
     }
 }
 
@@ -95,9 +116,9 @@ class DLL{
     // Print the List
     public void printList(){
         Node current = head;
-        System.out.println("Doubly Linked List: ");
+        
         while (current != null) { 
-            System.out.println(current.data + " ");
+            System.out.print(current.data + " -> ");
             current = current.next;
         }
         System.out.println();
