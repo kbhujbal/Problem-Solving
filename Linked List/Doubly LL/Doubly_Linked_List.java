@@ -73,7 +73,24 @@ class DLL{
     }
 
     // Reverse the List
-    
+    public void reverse() {
+        Node temp = null;
+        Node current = head;
+
+        // Swap next and prev for all nodes
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        // Update head to the last node
+        if (temp != null) {
+            head = temp.prev;
+        }
+    }
+
 
     // Print the List
     public void printList(){
