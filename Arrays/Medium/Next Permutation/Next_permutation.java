@@ -1,10 +1,12 @@
 public class Next_permutation {
     public void nextPermutation(int[] nums) {
+        // Find first number from last which is smaller than the number on right
         int i = nums.length - 2;
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
         }
 
+        // find first number from last which is greater than number at index i
         if (i >= 0) {
             int j = nums.length - 1;
             while (j >= 0 && nums[j] <= nums[i]) {
@@ -40,3 +42,10 @@ public class Next_permutation {
         }
     }
 }
+
+// Logic of this code:
+// First find the number from last which is smaller than the element on it's right (call it's index i)
+// Then find the first number from last which greater than the number at index i (call it's index j)
+// swap numbers at index i and j (i.e. swap(i, j))
+// reverse the subarray starting from (i + 1) till the last element of the main array
+// final answer is the array in the above step
