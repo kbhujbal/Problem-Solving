@@ -40,6 +40,7 @@ public class Palindrome_LL{
             second = second.next;
         }
         reverse(new_head);
+
         return true;
     }
 
