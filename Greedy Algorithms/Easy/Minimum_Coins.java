@@ -3,7 +3,7 @@ import java.util.*;
 public class Minimum_Coins{
     public static void main(String[] args) {
         int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
-        int V = 49;
+        int V = 99;
         int value = V;
 
         ArrayList<Integer> ans = new ArrayList<>();
@@ -21,3 +21,10 @@ public class Minimum_Coins{
         }
     }
 }
+
+// This solution for the question is not always correct. 
+// Let's consider the following example :
+// denominations = {1, 5, 6, 9};
+// V = 11
+// This solution will give {9, 1, 1} as the output, but {5, 6} is the solution,
+// because it requires less number of denominations
