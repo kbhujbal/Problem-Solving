@@ -1,7 +1,7 @@
 public class First_and_last_occurence{
     public static void main(String[] args) {
         int [] arr ={2, 4, 6, 8, 8, 8, 11, 13};
-        int x = 11;
+        int x = 8;
 
         int first = LowerBound(arr, x);
         int last = UpperBound(arr, x) - 1;
