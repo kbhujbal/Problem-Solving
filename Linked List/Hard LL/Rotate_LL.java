@@ -16,6 +16,8 @@ public class Rotate_LL{
     }
 
     private static Node rotate_ll(Node head, int k){
+        if (head == null || k == 0) return head;
+        
         Node tail = head;
         int len = 1;
 
