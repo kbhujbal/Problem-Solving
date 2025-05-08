@@ -20,6 +20,10 @@ public class Remove_Duplicates{
     }
 
     private static Node remove_duplicates(Node head){
+        if (head == null) {
+            return null;
+        }
+
         Node temp = head;
 
         while (temp != null && temp.next != null) { 
