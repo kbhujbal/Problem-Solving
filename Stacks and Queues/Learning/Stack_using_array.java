@@ -6,11 +6,11 @@ public class Stack_using_array {
         s.push(6);
         s.push(3);
         s.push(7);
-        System.out.println("Top of the stack before deleting any element " + s.top());
+        System.out.println("Top of the stack before deleting any element " + s.peek());
         System.out.println("Size of the stack before deleting any element " + s.size());
         System.out.println("The element deleted is " + s.pop());
         System.out.println("Size of the stack after deleting an element " + s.size());
-        System.out.println("Top of the stack after deleting an element " + s.top());
+        System.out.println("Top of the stack after deleting an element " + s.peek());
     }
 }
 
@@ -39,7 +39,7 @@ class stack {
         return x;
     }
 
-    int top() {
+    int peek() {
         return arr[top];
     }
 
