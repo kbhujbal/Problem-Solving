@@ -21,7 +21,7 @@ public class Diameter {
         root.right.right.right.right = newNode8;
 
         int dmtr = diameter_of_tree(root);
-        System.out.println("Diameter of the inary Tree is : " + dmtr);
+        System.out.println("Diameter of the Binary Tree is : " + dmtr);
     }
 
     private static int diameter_of_tree(Node root){
