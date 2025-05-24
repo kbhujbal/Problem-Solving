@@ -22,8 +22,8 @@ public class Maximum_Path_Sum {
     private static int max_path_sum(Node node, int[] maxValue){
         if(node == null) return 0;
 
-        int leftSum = max_path_sum(node.left, maxValue);
-        int rightSum = max_path_sum(node.right, maxValue);
+        int leftSum = Math.max(0, max_path_sum(node.left, maxValue));
+        int rightSum = Math.max(0, max_path_sum(node.right, maxValue));
 
         maxValue[0] = Math.max(maxValue[0] ,node.data + leftSum + rightSum);
 
