@@ -14,7 +14,7 @@ public class Maximum_Path_Sum {
         
         int [] maxValue = new int[1];
         maxValue[0] = Integer.MIN_VALUE;
-        int mps = max_path_sum(root, maxValue);
+        max_path_sum(root, maxValue);
 
         System.out.println("Maximum Path Sum in the Binary Tree is : " + maxValue[0]);
     }
