@@ -1,6 +1,5 @@
 from Node import Node
-from collections import deque, defaultdict
-import heapq
+from collections import deque
 
 def main():
     root = Node(1)
@@ -12,8 +11,35 @@ def main():
     root.right.left = Node(6)
     root.right.right = Node(7)
 
-    print("Level Order Traversal of binary tree is:")
-    print(level_order_traversal(root))
+    levels = level_order(root)
 
-# def level_order_traversal(root):
-    
+    print("Level Order Traversal:")
+    for level in levels:
+        print(level)
+
+def level_order(root):
+    if not root:
+        return []
+
+    result = []
+    queue = deque([root])
+
+    while queue:
+        level_size = len(queue)
+        level = []
+
+        for _ in range(level_size):
+            current = queue.popleft()
+            level.append(current.data)
+
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+
+        result.append(level)
+
+    return result    
+
+if __name__ == "__main__":
+    main()
