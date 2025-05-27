@@ -21,7 +21,7 @@ def verticalOrderTraversal(root):
 
     while queue:
         node, row, col = queue.popleft()
-        heapq.heappush(node_map[col], (row, node.val))
+        heapq.heappush(node_map[col], (row, node.data))
 
         if node.left:
             queue.append((node.left, row + 1, col - 1))
@@ -30,7 +30,11 @@ def verticalOrderTraversal(root):
 
     result = []
     for col in sorted(node_map.keys()):
-        col_nodes = [val for row, val in sorted(node_map[col])]
+        col_nodes = [data for row, data in sorted(node_map[col])]
         result.append(col_nodes)
 
     return result
+
+if __name__ == "__main__":
+    main()
+
