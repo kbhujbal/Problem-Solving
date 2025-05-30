@@ -10,17 +10,17 @@ def main():
     root.left.right.left = Node(6)
     root.right.right = Node(7)
 
-    ans = Right_View(root)
+    ans = Left_View(root)
     print(ans)
 
 
 
-def Right_View(root):
+def Left_View(root):
     if not root:
         return []
-
+    
     res = []
-
+    
     def dfs(node, depth):
         if not node:
             return
@@ -28,13 +28,13 @@ def Right_View(root):
         if depth == len(res):
             res.append(node.data)
 
-        dfs(node.right, depth + 1)
         dfs(node.left, depth + 1)
+        dfs(node.right, depth + 1)
 
     dfs(root, 0)
     return res
 
 
 
-if  __name__ == "__main__":
+if __name__ == "__main__":
     main()
