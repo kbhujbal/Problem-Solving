@@ -1,38 +1,31 @@
-from collections import defaultdict, deque
+from collections import deque
+from Graph import Graph
 
-class Graph:
-    def __init__(self):
-        self.graph = defaultdict(list)
+def bfs(graph, start):
+    visited = set()
+    queue = deque()
 
-    def add_edge(self, u, v):
-        self.graph[u].append(v)
-        # For undirected graph, uncomment below:
-        # self.graph[v].append(u)
+    visited.add(start)
+    queue.append(start)
 
-    def bfs(self, start):
-        visited = set()
-        queue = deque()
+    while queue:
+        node = queue.popleft()
+        print(node, end=' ')
 
-        visited.add(start)
-        queue.append(start)
+        for neighbor in graph.get_neighbors(node):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
 
-        while queue:
-            node = queue.popleft()
-            print(node, end=' ')
+if __name__ == "__main__":
+    g = Graph(directed=False)
 
-            for neighbor in self.graph[node]:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    queue.append(neighbor)
+    g.add_edge('A', 'B')
+    g.add_edge('A', 'C')
+    g.add_edge('B', 'D')
+    g.add_edge('B', 'E')
+    g.add_edge('C', 'F')
+    g.add_edge('E', 'F')
 
-# Example usage:
-g = Graph()
-g.add_edge('A', 'B')
-g.add_edge('A', 'C')
-g.add_edge('B', 'D')
-g.add_edge('B', 'E')
-g.add_edge('C', 'F')
-g.add_edge('E', 'F')
-
-print("BFS starting from A:")
-g.bfs('A')
+    print("BFS starting from A:")
+    bfs(g, 'A')

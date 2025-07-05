@@ -16,7 +16,8 @@ def numberOfIslands(grid):
 
         while queue:
             row, col = queue.popleft()
-            directions = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
+            directions = [(-1, 0), (1, 0), (0, -1), (0, 1), 
+                          (-1, -1), (-1, 1), (1, -1), (1, 1)]
 
             for dr, dc in directions:
                 nr, nc = row + dr, col + dc
