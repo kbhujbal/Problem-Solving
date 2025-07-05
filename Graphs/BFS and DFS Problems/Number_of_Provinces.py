@@ -1,4 +1,4 @@
-def numberOfIslands(isConnected):
+def numberOfProvinces(isConnected):
     n = len(isConnected)
     visited = [0] * n
 
@@ -19,7 +19,7 @@ def numberOfIslands(isConnected):
 
 
 isConnected = [[1,1,0],[1,1,0],[0,0,1]]
-islands = numberOfIslands(isConnected)
+islands = numberOfProvinces(isConnected)
 print(islands)
 
 # [1,1,0]
