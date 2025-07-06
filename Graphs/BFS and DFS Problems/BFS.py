@@ -12,7 +12,7 @@ def bfs(graph, start):
         node = queue.popleft()
         print(node, end=' ')
 
-        for neighbor in graph.get_neighbors(node):
+        for neighbor in graph.adj[node]:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
