@@ -6,7 +6,7 @@ def dfs(graph, start, visited = None):
 
     visited.add(start)
     print(start, end=' ')
-
+    
     for neighbor in graph.adj[start]:
         if neighbor not in visited:
             dfs(graph, neighbor, visited)
