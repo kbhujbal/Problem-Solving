@@ -21,7 +21,6 @@ def koko_eating_banana(piles, h):
     
     return res
 
-
 piles = [30,11,23,4,20]
 h = 5
 print(koko_eating_banana(piles, h))
