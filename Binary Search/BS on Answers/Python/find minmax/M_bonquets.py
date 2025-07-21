@@ -1,0 +1,43 @@
+def m_bonquets(bloomday, m, k):
+    n = len(bloomday)
+    
+    if m * k > n:
+        return -1
+    
+    low = min(bloomday)
+    high = max(bloomday)
+    res = -1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if can_make_bonquets(mid, bloomday):
+            res = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    
+    return res
+    
+
+def can_make_bonquets(day, bloomday):
+    bonquets_made = 0
+    adjacent_flowers = 0
+
+    for b_day in bloomday:
+        if b_day <= day:
+            adjacent_flowers += 1
+
+            if adjacent_flowers == k:
+                bonquets_made += 1
+                adjacent_flowers = 0
+        else:
+            adjacent_flowers = 0
+        
+    return bonquets_made >= m
+
+
+bloomday = [1,10,3,10,2]
+m = 3
+k = 1
+print(m_bonquets(bloomday, m, k))
