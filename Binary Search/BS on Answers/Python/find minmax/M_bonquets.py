@@ -21,7 +21,7 @@ def m_bouquets(bloomday, m, k):
     
 
 def can_make_bouquets(day, bloomday):
-    bonquets_made = 0
+    bouquets_made = 0
     adjacent_flowers = 0
 
     for b_day in bloomday:
@@ -29,12 +29,12 @@ def can_make_bouquets(day, bloomday):
             adjacent_flowers += 1
 
             if adjacent_flowers == k:
-                bonquets_made += 1
+                bouquets_made += 1
                 adjacent_flowers = 0
         else:
             adjacent_flowers = 0
         
-    return bonquets_made >= m
+    return bouquets_made >= m
 
 
 bloomday = [1,10,3,10,2]
