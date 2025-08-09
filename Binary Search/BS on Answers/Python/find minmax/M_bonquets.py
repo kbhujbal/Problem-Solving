@@ -19,7 +19,6 @@ def m_bouquets(bloomday, m, k):
     
     return res
     
-
 def can_make_bouquets(day, bloomday):
     bouquets_made = 0
     adjacent_flowers = 0
