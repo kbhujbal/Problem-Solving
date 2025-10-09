@@ -1,6 +1,5 @@
 import math
 
-
 def koko_eating_banana(piles, h):
     low, high = 1, len(piles)
 
