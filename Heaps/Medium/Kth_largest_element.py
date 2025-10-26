@@ -10,18 +10,15 @@ def find_kth_largest_min_heap(nums, k):
     
     for num in nums:
         if len(min_heap) < k:
-            # Fill the heap until it has k elements
             heapq.heappush(min_heap, num)
         else:
-            # If the current number is larger than the smallest in the heap
             if num > min_heap[0]:
-                # Pop the smallest and push the current number
                 heapq.heappushpop(min_heap, num)
                 
-    # After the loop, the root of the heap is the Kth largest element
     return min_heap[0]
 
-# --- Example ---
+
+
 nums = [3, 2, 1, 5, 6, 4]
 k = 2
 print(f"Method 1: The {k}nd largest element is: {find_kth_largest_min_heap(nums, k)}")
