@@ -1,6 +1,5 @@
 from typing import Counter
 
-
 def task_scheduler(tasks, n):
     task_counts = Counter(tasks)
 

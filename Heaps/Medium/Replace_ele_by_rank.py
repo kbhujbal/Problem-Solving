@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def replace_elements_by_rank(arr):
     sorted_unique = sorted(set(arr))
 
