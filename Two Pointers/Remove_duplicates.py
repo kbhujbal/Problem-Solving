@@ -18,7 +18,7 @@ def remove_duplicates(nums):
 
 
 
-nums = [0, 0, 1, 1, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6]
+nums = [0, 0, 1, 1, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7]
 index = remove_duplicates(nums)
 
 for i in range(index):
