@@ -1,3 +1,8 @@
+# Title : Longest substiring with at most 2 distinct characters
+
+# Given a string s, return the length of the longest substring that 
+# contains at most two distinct characters.
+
 def longest_substring_2_distinct(s):
     if not s:
         return 0
