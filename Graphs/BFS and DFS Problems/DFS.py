@@ -11,6 +11,20 @@ def dfs(graph, start, visited = None):
         if neighbor not in visited:
             dfs(graph, neighbor, visited)
 
+    
+def dfs_iterative(graph, start):
+    visited = set()
+    stack = [start]
+
+    while stack:
+        vertex = stack.pop()
+
+        if vertex not in visited:
+            print(vertex, end=' ')
+            visited.add(vertex)
+            stack.extend(reversed(graph.adj[vertex]))
+
+
 
 if __name__ == "__main__":
     g = Graph(directed=False)
